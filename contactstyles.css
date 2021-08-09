@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    font-family: Manrope, sans-serif;
+    grid-template-columns: 13rem 1fr;
+}
+
+nav {
+    position: fixed;
+    font-size: 1.5rem;
+    border-right: 1px solid navy;
+    grid-area: 1/1/6/1;
+    height: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin-right: 1rem;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    border: 1px solid navy;
+    border-radius: 8px;
+    padding: 0.3rem;
+    box-shadow: 1px 1px black;
+}
+
+main {
+    grid-column-start: 2;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+img {
+    width: 5rem;
+    height: 5rem;
+}
