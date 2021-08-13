@@ -20,16 +20,14 @@ const boxReturn = function(event) {
 //function to handle events
 let eventAssignment = function(change) {
     change.onkeydown = function() {
-      buttPlay(event);
+      boxChange(event);
     }
     change.onkeyup = function() {
-      buttReturn(event);
+      boxReturn(event);
     }
   } 
 //loop for each array element to go trough the function
-buttons.forEach(eventAssignment);
-
-
+toChange.forEach(eventAssignment(change));
 
 
 
