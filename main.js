@@ -1,33 +1,48 @@
+window.onload = function () {
+  const buttons = ['homebt', 'projectsbt', 'contactbt', 'skillsbt'];
+  
+const changeButton = function(button) {
+  document.getElementById(button).addEventListener("mouseover", function() {
+  document.getElementById(button).style.backgroundColor = "Gainsboro";
+})
+};
+  
+const changeButtonBack = function(button) {
+document.getElementById(button).addEventListener("mouseout", function() {
+  document.getElementById(button).style.backgroundColor = "";
+});
+}
 
-//buttons stored in a array
-const buttons = ['homebt', 'projectsbt', 'contactbt', 'skillsbt'];
-const toChange = [];
+buttons.forEach(changeButton);
+buttons.forEach(changeButtonBack);
 
-buttons.forEach(function(button){
-    toChange.push(document.getElementById(button))
+
+document.getElementById("enlarge").addEventListener("click", function() {
+  const image = document.getElementById("mixed");
+  image.style.width= "150%";
+  image.style.height = 'auto';
 })
 
-//functions that change the color of button and change it back
-const boxChange = function(event) {
-    event.target.style.backgroundColor = "black";
+document.getElementById("enlarge").addEventListener("click", function() {
+  document.getElementById("enlarge").style.display = "none";
+  
+  const shrink= document.getElementById("shrink");
+  shrink.style.display = "block"
+
+})
+
+document.getElementById("shrink").addEventListener("click", function() {
+  const image = document.getElementById("mixed");
+  image.style.width = '120%';
+  image.style.height = 'auto';
+})
+
+document.getElementById("shrink").addEventListener("click", function() {
+  document.getElementById("shrink").style.display = "none";
+  
+  const shrink= document.getElementById("enlarge");
+  shrink.style.display = "block";
+
+})
+
 }
-
-const boxReturn = function(event) {
-    event.target.style.backgroundColor = "" ;
-}
-
-
-//function to handle events
-let eventAssignment = function(change) {
-    change.onkeydown = function() {
-      boxChange(event);
-    }
-    change.onkeyup = function() {
-      boxReturn(event);
-    }
-  } 
-//loop for each array element to go trough the function
-toChange.forEach(eventAssignment(change));
-
-
-

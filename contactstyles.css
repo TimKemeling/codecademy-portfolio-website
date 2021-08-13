@@ -7,16 +7,15 @@ body {
 }
 
 nav {
+    display: flex;
+    flex-direction: column;
     position: fixed;
     font-size: 1.5rem;
     border-right: 1px solid navy;
     grid-area: 1/1/6/1;
     height: 100%;
-}
-
-nav ul {
-    list-style-type: none;
-    margin-right: 1rem;
+    z-index: 5;
+    background-color: white;
 }
 
 nav a {
@@ -26,6 +25,9 @@ nav a {
     border-radius: 8px;
     padding: 0.3rem;
     box-shadow: 1px 1px black;
+    margin: 0 1rem;
+    line-height: 3.5rem;
+    height: 1rem;
 }
 
 main {
@@ -36,7 +38,91 @@ h1 {
     font-size: 2.5rem;
 }
 
+p {
+    font-size: 1.1rem;
+}
+
 img {
     width: 5rem;
     height: 5rem;
+}
+
+@media only screen and (max-width: 960px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 5rem 1fr 1fr 1fr;
+    }
+   
+    nav {
+        flex-wrap: wrap;
+        border-bottom: 1px solid navy;
+        border-right: none;
+        flex-direction: row;
+        height: 5rem;
+        width: 100%;
+        align-items: center;
+    }
+
+    main { 
+         grid-row-start:2;
+         grid-column-start: 1;
+         padding: 0 1rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 5rem 1fr;
+    }
+
+    nav {
+    }
+    
+    nav a {
+        font-size: 1.1rem;
+    }
+
+    .me-pic {
+        grid-row-start: 1;
+        grid-column-start: 1;
+        align-self: flex-end;
+    }
+
+    .about-me {
+        margin-top: 0;
+        grid-row-start: 2;
+    }
+
+    .excursion-cap {
+        max-height: 35rem;
+    }
+
+    .projects {
+        grid-row-start: 3;
+    }
+
+    .skills {
+        grid-row-start: 4;
+    }
+
+    .skills h2 {
+        display: block;
+    }
+
+    footer {
+        grid-row-start: 5;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    nav a {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 395px) {
+    nav a {
+        font-size: 0.7rem;
+    }
 }
